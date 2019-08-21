@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: heroku
+
+---
+spring:
+  profiles: local
+
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform:
+    url: jdbc:mysql://localhost/moodImp?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: secretpassword
+    driverClassName:
+
+
+---
+spring:
+  profiles: heroku
+
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform:
+    url: jdbc:mysql://b30dbfdf5e2f78:30d0fe63@us-cdbr-iron-east-02.cleardb.net/heroku_c0da41df44b4604?reconnect=true
+
+    username: b30dbfdf5e2f78
+    password: 0d0fe63
+    driverClassName:
+
+
